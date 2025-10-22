@@ -1,0 +1,12 @@
+{
+  "name": "entendendo_algoritmos",
+  "version": "1.0.0",
+  "main": "cap1_notacao_bigO.js",
+  "scripts": {
+    "test": "node --watch cap7_dijkstra.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

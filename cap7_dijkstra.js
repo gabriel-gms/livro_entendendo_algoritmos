@@ -28,7 +28,7 @@ let grafo = {
    "fim": {}
 }
 
-let custo = {
+let custos = {
    "a": 6,
    "b": 2,
    "fim": Infinity
@@ -42,10 +42,50 @@ let pais = {
 
 let processados = []
 
-function dijkstra(){
-   
+function menorCusto(custos){
+   let custoMenor = Infinity
+   let noMenor = undefined
+
+   for(no in custos){
+      let custo = custos[no]
+      if(custo<custoMenor && !processados.includes(no)){
+         noMenor = no
+         custoMenor = custo
+      }
+   }
+   return noMenor
 }
 
+function dijkstra(){
+   no = menorCusto(custos)
+
+   while(!(no === undefined)){
+      let custo = custos[no]
+      let vizinhos = grafo[no]
+
+      for(n in vizinhos){
+         let novo_custo = custo + vizinhos[n]
+         if(novo_custo<custos[n]){
+            custos[n] = novo_custo
+            pais[n] = no
+         }
+      }
+
+      processados.push(no)
+      no = menorCusto(custos)
+   }
+}
+
+//TABELA ANTES
 console.log(grafo)
-console.log(custo)
+console.log(custos)
 console.log(pais)
+console.log(processados)
+
+dijkstra()
+
+//TABELA DEPOIS
+console.log(grafo)
+console.log(custos)
+console.log(pais)
+console.log(processados)
