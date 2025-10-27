@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cap1_notacao_bigO.js",
   "scripts": {
-    "test": "node --watch cap7_dijkstra.js"
+    "test": "node --watch cap8_aproximacao.js"
   },
   "keywords": [],
   "author": "",
