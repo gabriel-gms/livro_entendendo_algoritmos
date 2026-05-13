@@ -9,6 +9,8 @@
 
     *Dependendo da característica a ser comparada, os resultados podem ser 
     diferentes.
+
+    *O numero ideal de vizinho pode ser a raiz quadrada do numero de usuarios
 */
 
 

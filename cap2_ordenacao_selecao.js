@@ -1,4 +1,5 @@
-// É possível chamar a funcção buscaMaior ou buscaMenor dentro da função ordenacaoPorSelecao, ficando crescente ou decrescente
+// É possível chamar a funcção buscaMaior ou buscaMenor dentro da função 
+// ordenacaoPorSelecao, ficando crescente ou decrescente
 
 const lista = [5,3,6,2,10]
 const tamanho = lista.length
