@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cap1_notacao_bigO.js",
   "scripts": {
-    "test": "node --watch cap8_aproximacao.js"
+    "test": "node --watch cap11_arvore_binaria.js"
   },
   "keywords": [],
   "author": "",
