@@ -13,13 +13,21 @@ class Node {
     }
 }
 
-class BinaryTree {
+console.log("---------------Estrutura de um nó:-------------------");
+console.log("-----------------------------------------------------");
+console.log(new Node(1));
+console.log("-----------------------------------------------------");
+console.log()
+
+//Essa classe vai representar a raiz da árvore, ou seja, o nó inicial.
+//Essa classe, além de guardar os nós, guarda os métodos de travessia da árvore A PARTIR da raiz.
+class BinaryTreeRoot {
     constructor(data=null, node=null){
         if(node){
             this.root = node;
         }
         else if(data){
-            node = Node(data);
+            node = new Node(data);
             this.root = node;
         }
         else {
@@ -27,6 +35,7 @@ class BinaryTree {
         }
     }
 
+    //Travessia simétrica(inorder/pré-ordem): esquerda, raiz, direita
     simetric_traversal(node=null){
         if(node === null){
             node = this.root
@@ -43,9 +52,19 @@ class BinaryTree {
     }
 }
 
+console.log("---------------Estrutura de uma classe BinaryTreeRoot (Só reconhece o nó):-------------------");
+console.log("---------------------------------------------------------------------------------------------");
+let treeExample = new BinaryTreeRoot(1);
+console.log(treeExample.root); //Dentro da BinaryTreeRoot, o Node é criada na variável root
+treeExample.root.left = new Node(2);
+treeExample.root.right = new Node(3);
+console.log(treeExample);
+console.log("---------------------------------------------------------------------------------------------");
+console.log()
+
 function inorder_example_tree(){
 
-    let tree = new BinaryTree();
+    let tree = new BinaryTreeRoot();
     let n1 = new Node('a');
     let n2 = new Node('+');
     let n3 = new Node('*');
@@ -71,4 +90,20 @@ function inorder_example_tree(){
 }
 
 
+console.log("---------------Exemplo de travessia inorder ou simétrica:-------------------");
+console.log("----------------------------------------------------------------------------");
+/*
+        '+'
+      /    \
+    'a'     '*'
+          /    \
+        'b'     '-'
+               /   \
+             '/'    'e'
+            /   \
+          'c'   'd'
+*/
 inorder_example_tree();
+console.log()
+console.log("----------------------------------------------------------------------------");
+console.log()
