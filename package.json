@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "cap1_notacao_bigO.js",
   "scripts": {
-    "test": "node --watch cap11_arvore_binaria.js"
+    "test": "node --watch cap11/cap11_inorder.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type": "module"
 }

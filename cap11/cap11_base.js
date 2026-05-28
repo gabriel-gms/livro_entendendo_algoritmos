@@ -5,7 +5,7 @@
     refatorado em javascript
 */
 
-class Node {
+export class Node {
     constructor(data){
         this.data = data
         this.left = null;
@@ -21,7 +21,7 @@ console.log()
 
 //Essa classe vai representar a raiz da árvore, ou seja, o nó inicial.
 //Essa classe, além de guardar os nós, guarda os métodos de travessia da árvore A PARTIR da raiz.
-class BinaryTreeRoot {
+export class BinaryTreeRoot {
     constructor(data=null, node=null){
         if(node){
             this.root = node;
@@ -60,50 +60,4 @@ treeExample.root.left = new Node(2);
 treeExample.root.right = new Node(3);
 console.log(treeExample);
 console.log("---------------------------------------------------------------------------------------------");
-console.log()
-
-function inorder_example_tree(){
-
-    let tree = new BinaryTreeRoot();
-    let n1 = new Node('a');
-    let n2 = new Node('+');
-    let n3 = new Node('*');
-    let n4 = new Node('b');
-    let n5 = new Node('-');
-    let n6 = new Node('/');
-    let n7 = new Node('c');
-    let n8 = new Node('d');
-    let n9 = new Node('e');
-    
-    n6.left = n7
-    n6.right = n8
-    n5.left = n6
-    n5.right = n9
-    n3.left = n4
-    n3.right = n5
-    n2.left = n1
-    n2.right = n3
-    
-    tree.root = n2
-    tree.simetric_traversal();
-    return tree
-}
-
-
-console.log("---------------Exemplo de travessia inorder ou simétrica:-------------------");
-console.log("----------------------------------------------------------------------------");
-/*
-        '+'
-      /    \
-    'a'     '*'
-          /    \
-        'b'     '-'
-               /   \
-             '/'    'e'
-            /   \
-          'c'   'd'
-*/
-inorder_example_tree();
-console.log()
-console.log("----------------------------------------------------------------------------");
 console.log()
