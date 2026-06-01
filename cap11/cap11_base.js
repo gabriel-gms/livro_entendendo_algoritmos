@@ -50,6 +50,40 @@ export class BinaryTreeRoot {
             process.stdout.write(' ) ');
         }
     }
+
+    //Travessia assimétrica(onorder/pós-ordem): esquerda, direita, raiz
+    asymmetric_traversal(node=null){
+        if(node === null){
+            node = this.root
+        }
+        if(node.left){
+            process.stdout.write('( ');
+            this.asymmetric_traversal(node.left);
+        }
+        process.stdout.write(node.data+' ');
+        if(node.right){
+            this.asymmetric_traversal(node.right);
+            process.stdout.write(' ) ');
+        }
+    }
+
+    height(node=null){
+        let heightLeft = 0
+        let heightRight = 0
+        if(node === null){
+            node = this.root
+        }
+        if(node.left){
+            heightLeft = this.height(node.left);
+        }
+        if(node.right){
+            heightRight = this.height(node.right);
+        }
+        if(heightLeft > heightRight){
+            return heightLeft + 1
+        }
+        return heightRight + 1
+    }
 }
 
 console.log("---------------Estrutura de uma classe BinaryTreeRoot (Só reconhece o nó):-------------------");

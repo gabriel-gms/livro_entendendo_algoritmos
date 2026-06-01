@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cap1_notacao_bigO.js",
   "scripts": {
-    "test": "node --watch cap11/cap11_inorder.js"
+    "test": "node --watch cap11/cap11_onorder.js"
   },
   "keywords": [],
   "author": "",
