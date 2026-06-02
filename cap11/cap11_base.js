@@ -86,6 +86,44 @@ export class BinaryTreeRoot {
     }
 }
 
+export class BinarySearch extends BinaryTreeRoot {
+    insert(value){
+        let parent = null
+        let x = this.root
+        while(x){
+            parent = x
+            if(value < x.data){
+                x = x.left
+            } else {
+                x = x.right
+            }
+        }
+        
+        if(parent === null){
+            this.root = new Node(value)
+        }
+        else if(value < parent.data){
+            parent.left = new Node(value)
+        }
+        else {
+            parent.right = new Node(value)
+        }
+    }
+
+    search(value, node = 0){
+        if(node === 0){
+            node = this.root
+        }
+        if(node === null || node.data === value){
+            return BinarySearch
+        }
+        if(value < node.data){
+            return this.search(value, node.left)
+        }
+        return this.search(value, node.right)
+    }
+}
+
 console.log("---------------Estrutura de uma classe BinaryTreeRoot (Só reconhece o nó):-------------------");
 console.log("---------------------------------------------------------------------------------------------");
 let treeExample = new BinaryTreeRoot(1);
